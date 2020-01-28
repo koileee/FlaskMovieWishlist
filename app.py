@@ -46,7 +46,7 @@ def hello_world():
             "Select * from MOVIE_USER;"
         ).fetchall()
     for row in res:
-        return (row[0])
+        return(row[0]+" "+str(row[1]))
 
 
 @app.route('/abc/')
