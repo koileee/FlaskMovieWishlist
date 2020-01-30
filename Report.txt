@@ -1,0 +1,10 @@
+Application description:
+
+The application allows users to create a wish list of the movies they would like to watch. The
+application will also recommend movies based on the user’s wishlist.
+
+The choice of Data right now is the IMDB movie dataset.
+We will create user data and wishlist data as we gain user iteraction with the web app.
+
+The platform will be a Flask Python web application that will connect to the MySQL
+database on Google Cloud Platform. Interaction will be done by clicking through the web application.
