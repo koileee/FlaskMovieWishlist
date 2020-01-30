@@ -2,4 +2,5 @@ Jiaxiang Liu
 Jing Zhong
 Yu Li
 Henry Zhou
-  - edited some text files
+  - did some research on which databases to use
+  - completed Google SDK set up tutorials
