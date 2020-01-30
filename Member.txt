@@ -1,4 +1,6 @@
 Jiaxiang Liu
+  - set up tables in the Cloud SQL instance
+  - load sample data into the Cloud SQL instance
 Jing Zhong
   - completed google SDK set up tutorials
   - completed proxy set up tutorials
