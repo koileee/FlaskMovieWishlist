@@ -3,7 +3,8 @@ Jing Zhong
 Yu Li
   - Set up python flask web app
   - Connect the web app to the Cloud SQL instance
-  - Downloaded the proxy to test the app locally
+  - Displayed the first row from the test table in the app
+  - Downloaded the Google Cloud proxy to test the app locally
 Henry Zhou
   - did some research on which databases to use
   - completed Google SDK set up tutorials
