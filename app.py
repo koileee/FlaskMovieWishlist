@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, Response
+from flask import Flask, render_template, request, Response, redirect, url_for
 import sqlalchemy
 import os
 import pymysql
@@ -22,11 +22,13 @@ db_user='root'
 db_pass='password348'
 db_name='test'
 
+prod = False
 
 app = Flask(__name__)
 
 #connect = "mysql+pymysql://{}:{}@/{}?unix_socket=/cloudsql/{}"""
 #db = create_engine(connect.format(db_user,db_pass,db_name,cloud_sql_connection_name))
+
 
 db = sqlalchemy.create_engine(
     sqlalchemy.engine.url.URL(
@@ -40,17 +42,27 @@ db = sqlalchemy.create_engine(
 
 @app.route('/')
 def hello_world():
-    res = ["ERROR"]
+    data = []
     with db.connect() as conn:
-        res = conn.execute(
-            "Select * from MOVIE_USER;"
+        data = conn.execute(
+            "Select movie_title, imdb_score, genres from MOVIE_USER;"
         ).fetchall()
-    for row in res:
-        return(row[0]+" "+str(row[1]))
+
+    return render_template('template.html', outdata=data)
 
 
-@app.route('/abc/')
-def hello():
-    return 'Hello, abc!'
+@app.route('/filter',  methods=['GET', 'POST'])
+def abc():
+    if request.method == 'POST':
+        select = request.form.get('genre')
+        if select == "All":
+            return redirect(url_for('hello_world'))
+        with db.connect() as conn:
+            data = conn.execute(
+                """Select movie_title, imdb_score, genres from MOVIE_USER where
+                genres like %s limit 10;""", [select+"%"]
+            ).fetchall()
+        return(render_template('template.html', outdata=data))
+
 if __name__ == '__main__':
     app.run(host="127.0.0.1", port=8080, debug=True)

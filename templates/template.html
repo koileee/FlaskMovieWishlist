@@ -1,0 +1,51 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  <div class="jumbotron text-center">
+  <h1>Create My Movie Wishlist</h1>
+</div>
+
+<div class="container">
+<form method="POST" action="{{ url_for('abc') }}">
+    <div class="form-group">
+      <label for="genre">Genre</label>
+      <select class="form-control" name="genre" >
+        <option value="All">All</option>
+        <option value="Drama">Drama</option>
+        <option value="History">History</option>
+        <option value="War">War</option>
+        <option value="Crime">Crime</option>
+        <option value="Sci-Fi">Sci-Fi</option>
+        <option value="Romance">Romance</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+<br>
+<div class="container">
+
+  <table id="example" class="table table-hover" style="width:100%">
+      <thead>
+      <tr>
+          <th>Movie</th>
+          <th>Rating</th>
+          <th>Genre</th>
+      </tr>
+      </thead>
+      <tbody>
+          {% for row in outdata %}
+              <tr>
+                  <td>{{row[0]}}</td>
+                  <td>{{row[1]}}</td>
+                  <td>{{row[2]}}</td>
+              </tr>
+          {% endfor %}
+      </tbody>
+  </table>
+  <br>
+  <button type="button" class="btn btn-primary" id="button">RowCount</button>
+
+</div>
+
+{% endblock %}
