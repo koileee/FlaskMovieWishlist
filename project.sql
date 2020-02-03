@@ -29,7 +29,9 @@ create table wishlist (
         uid VARCHAR(36) not null,
         mid VARCHAR(9) not null,
         date_created TIMESTAMP,
-        primary key(uid,mid)
+        primary key(uid,mid),
+	foreign key (mid) references movies(mid),
+	foreign key (uid) references users(uid)
 );
 
 update MOVIE_USER
