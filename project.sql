@@ -47,3 +47,29 @@ alter table movies
         drop color,
         drop num_critic_for_reviews,
         drop plot_keywords;
+
+create table actors
+( aid INT(11) NOT NULL AUTO_INCREMENT,
+  actor_name VARCHAR(30) NOT NULL,
+  primary key (aid)
+);
+
+create table directors
+( did INT(11) NOT NULL AUTO_INCREMENT,
+  director_name VARCHAR(50) NOT NULL,
+  primary key (did)
+);
+
+insert into actors(actor_name) 
+	select * from
+	((select actor_1_name as actor_name from movies)
+	union
+	(select actor_2_name as actor_name from movies)
+	union 
+	(select actor_3_name as actor_name from movies)) a;
+
+insert into directors(director_name)
+	select distinct director_name from movies;
+
+
+
