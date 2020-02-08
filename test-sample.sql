@@ -68,3 +68,19 @@ select movie_title, movies.title_year
 where movies.title_year = a.title_year
 and movies.num_voted_users = a.num_voted_users
 ;
+
+
+-- recommends top 5 movies based on most wishlisted genre 
+-- order by imdb_score 
+-- added
+
+select movie_title, movies.title_year, imdb_score
+        from movies where
+	genre in
+	(select genre, 
+	 count(genre) c 
+	 from wishlist group by genre
+	 order by c
+	 limit 1) t1
+order by imdb_score limit 5
+;
