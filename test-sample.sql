@@ -70,6 +70,10 @@ and movies.num_voted_users = a.num_voted_users
 ;
 
 
+-- returns total number of movies in wishlist
+select count(*) from wishlist;
+
+
 -- recommends top 5 movies based on most wishlisted genre 
 -- order by imdb_score 
 -- added
@@ -84,3 +88,7 @@ select movie_title, movies.title_year, imdb_score
 	 limit 1) t1
 order by imdb_score limit 5
 ;
+
+
+
+
