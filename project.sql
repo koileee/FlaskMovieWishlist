@@ -71,3 +71,30 @@ insert into actors(actor_name)
 insert into directors(director_name)
         select distinct director_name from movies;
 	 
+create table movie2director
+(
+        mid VARCHAR(9) not null,
+        did INT(11) not null,
+        primary key (mid,did)
+);
+
+create table movie2actor
+(
+        mid VARCHAR(9) not null,
+        aid INT(11) not null,
+        primary key (mid,aid)
+);
+
+insert into movie2director select * from
+        (select distinct mid, did from
+        movies, directors
+        where movies.director_name = directors.director_name) l;
+
+insert into movie2actor select * from
+        (select mid, aid from
+        ((select mid, actor_1_name as actor_name from movies)
+        union
+        (select mid, actor_2_name as actor_name from movies)
+        union
+        (select mid, actor_3_name as actor_name from movies)) l, actors
+        where l.actor_name = actors.actor_name) m;
