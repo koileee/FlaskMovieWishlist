@@ -16,3 +16,4 @@ Yu Li
 Henry Zhou
   - did some research on which databases to use
   - completed Google SDK set up tutorials
+  - wrote out report.pdf for milestone 1
