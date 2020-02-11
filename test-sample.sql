@@ -8,6 +8,7 @@ select movie_title, movies.genres
 	group by genres) a
 where movies.genres = a.genres
 and movies.num_voted_users = a.num_voted_users
+limit 10
 ;
 
 -- select the highest rating movie wrt genre
@@ -19,6 +20,7 @@ select movie_title, movies.genres, movies.imdb_score
         group by genres) a
 where movies.genres = a.genres
 and movies.imdb_score = a.imdb_score
+limit 10
 ;
 
 -- select the highest rating movie wrt director
@@ -31,6 +33,7 @@ select movie_title, movies.director_name, movies.imdb_score
 where movies.director_name = a.director_name
 and movies.imdb_score = a.imdb_score
 order by a.imdb_score
+limit 10
 ;
 
 -- select the most popular movie wrt director
@@ -43,6 +46,7 @@ select movie_title, movies.director_name
         group by director_name) a
 where movies.director_name = a.director_name
 and movies.num_voted_users = a.num_voted_users
+limit 10
 ;
 
 -- select the highest rating movie wrt year
@@ -55,6 +59,7 @@ select movie_title, movies.title_year, movies.imdb_score
 where movies.title_year = a.title_year
 and movies.imdb_score = a.imdb_score
 order by a.title_year
+limit 10
 ;
 
 -- select the most popular movie wrt year
@@ -67,4 +72,5 @@ select movie_title, movies.title_year
         group by title_year) a
 where movies.title_year = a.title_year
 and movies.num_voted_users = a.num_voted_users
+limit 10
 ;
