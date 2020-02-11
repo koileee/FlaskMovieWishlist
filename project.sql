@@ -60,25 +60,6 @@ create table directors
   primary key (did)
 );
 
-<<<<<<< HEAD
-insert into actors(actor_name) 
-	select * from
-	((select actor_1_name as actor_name from movies)
-	union
-	(select actor_2_name as actor_name from movies)
-	union 
-	(select actor_3_name as actor_name from movies)) a;
-
-insert into directors(director_name)
-	select distinct director_name from movies;
-
-
-create table movie2director
-(
-	mid VARCHAR(9) not null,
-	did INT(11) not null,
-	primary key (mid,did)
-=======
 insert into actors(actor_name)
         select * from
         ((select actor_1_name as actor_name from movies)
@@ -95,7 +76,6 @@ create table movie2director
         mid VARCHAR(9) not null,
         did INT(11) not null,
         primary key (mid,did)
->>>>>>> b268f7f8a5a1424b83eb1ab4bbdf5c72b7a1e1e1
 );
 
 create table movie2actor
@@ -106,22 +86,6 @@ create table movie2actor
 );
 
 insert into movie2director select * from
-<<<<<<< HEAD
-	(select distinct mid, did from
-	movies, directors
-	where movies.director_name = directors.director_name) l;
-
-insert into movie2actor select * from
-	(select mid, aid from
-	((select mid, actor_1_name as actor_name from movies)
-	union
-	(select mid, actor_2_name as actor_name from movies)
-	union
-	(select mid, actor_3_name as actor_name from movies)) l, actors
-	where l.actor_name = actors.actor_name) m;
-
-
-=======
         (select distinct mid, did from
         movies, directors
         where movies.director_name = directors.director_name) l;
@@ -134,4 +98,3 @@ insert into movie2actor select * from
         union
         (select mid, actor_3_name as actor_name from movies)) l, actors
         where l.actor_name = actors.actor_name) m;
->>>>>>> b268f7f8a5a1424b83eb1ab4bbdf5c72b7a1e1e1
