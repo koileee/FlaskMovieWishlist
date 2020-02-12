@@ -1,3 +1,17 @@
+-- test if we successfully insert the row into the table
+select count(*) from users;
+
+insert into users 
+values ('2a2b89b9-d8b3-46d9-8a84-e8c1de3c76cc','test',111111);
+
+select count(*) from users;
+
+-- test if we successfully delete the row inserted into the table
+delete from users 
+where uid = '2a2b89b9-d8b3-46d9-8a84-e8c1de3c76cc';
+
+select count(*) from users;
+
 -- select the most popular movie wrt genre
 -- will rank by num_voted_user
 
