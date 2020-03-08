@@ -83,7 +83,6 @@ class RegisterForm(Form):
 def is_user_logged_in(f):
     @wraps(f)
     def wrap(*args, **kwargs):
-
         if 'logged_in' in session:
             return f(*args, **kwargs)
         else:
@@ -138,6 +137,7 @@ def login():
                 session['logged_in'] = True
                 session['username'] = username
                 session['uid'] = result[0][0]
+                session.permanent = True
                 flash('You are now logged in','success')
                 return redirect(url_for('dashboard'))
             else:
