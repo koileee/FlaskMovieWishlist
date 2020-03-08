@@ -98,3 +98,13 @@ insert into movie2actor select * from
         union
         (select mid, actor_3_name as actor_name from movies)) l, actors
         where l.actor_name = actors.actor_name) m;
+
+create table recommendation
+(
+        uid varchar(36) not null,
+        mid varchar(9) not null,
+        primary key (uid,mid)
+);
+
+create index scoreIndex on movies(imdb_score);
+create index genreIndex on movies(genres);
