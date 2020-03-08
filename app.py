@@ -289,21 +289,7 @@ def recommendation():
 
 
 
-@app.route('/process_genre_popular',methods=['POST'])
-def process_genre_popular():
-    content=request.get_json(force=True)
-    uid = session['uid']
-    mid = content[6]
-    date = datetime.today().strftime('%Y-%m-%d')
-    with db.connect() as conn:
-        firstStep = conn.execute(
-            "Select * from wishlist where uid = %s and mid = %s;",(uid, mid)
-        ).fetchall()
-        if len(firstStep) < 1:
-            data = conn.execute(
-                "INSERT INTO wishlist(uid, mid, date_created) VALUES(%s, %s, %s)",(uid, mid, date)
-            )
-    return redirect(url_for('dashboard'))
+
 
 @app.route('/process_wishlist',methods=['POST'])
 def process_wishlist():
