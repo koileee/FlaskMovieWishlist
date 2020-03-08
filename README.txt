@@ -1,5 +1,5 @@
 # my Wishlist
-An application where you can create a wishlist for various things.
+An application where you can create a wishlist for movies.
 
 The Python Flask web application will connect to the MySQL db on GCP through configurations
 
