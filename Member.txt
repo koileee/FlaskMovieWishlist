@@ -12,7 +12,7 @@ Yu Li
   - Displayed the first row from the test table in the app
   - Deployed the sample app to Google App Engine
   - Created a page to display all the movie data and a filter button on the movie genre
-  - Created test-sample.out
+  - Wrote the application function for register, login, add to wishlist and recommendations. 
 Henry Zhou
   - did some research on which databases to use
   - completed Google SDK set up tutorials
