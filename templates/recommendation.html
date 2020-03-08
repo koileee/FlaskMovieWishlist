@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  <div class="jumbotron text-center">
+  <h1>Create My Movie Wishlist</h1>
+</div>
+
+<div class="container">
+<div class="btn-group">
+  <button type="submit" class="btn btn-primary" id="genrePopular">Most popular movie by genre</button>
+  <button type="submit" class="btn btn-primary" id="ratingYear">Highest rating by year</button>
+  <button type="submit" class="btn btn-primary" id="directorPopular">Most popular movie by director</button>
+</div>
+</div>
+<br>
+<div class="container">
+
+  <table id="example" class="table table-hover" style="width:100%">
+      <thead>
+      <tr>
+        {% for d in header %}
+             <th>{{ d }}</th>
+        {% endfor %}
+      </tr>
+      </thead>
+      <tbody>
+          {% for row in outdata %}
+                <tr>
+                {% for d in row %}
+                     <td>{{ d }}</td>
+                {% endfor %}
+                </tr>
+          {% endfor %}
+      </tbody>
+  </table>
+  <br>
+  <button type="submit" class="btn btn-primary" id="wishListButton">Add to wishlist</button>
+</div>
+
+{% endblock %}

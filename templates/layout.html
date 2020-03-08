@@ -14,12 +14,40 @@
     $('#example tbody').on( 'click', 'tr', function () {
         $(this).toggleClass('selected');
     } );
-    $('#button').click( function () {
-        alert( table.rows('.selected').data().length +' row(s) selected' );
-    } );
+    // $('#button').click( function () {
+    //     alert( table.rows('.selected').data().length +' row(s) selected' );
+    // } );
+
+    $('button#wishListButton').bind('click', function() {
+      var len = table.rows('.selected').data().length
+      for (i = 0; i < len; i++){
+        console.log(table.rows('.selected').data()[i])
+        console.log(JSON.stringify(table.rows('.selected').data()[i]))
+        $.post('/process_wishlist', JSON.stringify(table.rows('.selected').data()[i]));
+      }
+      return false;
+    });
+
+    $('button#genrePopular').bind('click', function() {
+      window.location.href = '/recommendation?type=genrePopular'
+      return false;
+    });
+
+    $('button#ratingYear').bind('click', function() {
+      window.location.href = '/recommendation?type=ratingYear'
+      return false;
+    });
+
+    $('button#directorPopular').bind('click', function() {
+      window.location.href = '/recommendation?type=directorPopular'
+      return false;
+    });
 
 } );
+
+
 </script>
+
   <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
   <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 
