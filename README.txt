@@ -8,12 +8,13 @@ The Python Flask web application will connect to the MySQL db on GCP through con
 
 Raw Data Link:
 https://www.kaggle.com/carolzhangdc/imdb-5000-movie-dataset/version/1
-We downloaded the data from the above link, the form of a CSV file with 5k data.
-The data was imported to CloudSQL. 
-The data transformation code is in the project.sql file.
-During user signup, we will obtain data from the user such as their chosen “username” and “password”,  and our backend will build out custom database tables to account for this. This is present in the app.py file.
-A unique “userID” will be created for each user based on uuid function to establish a primary key. 
-When user clicks the "Add to wishlist" button, the movieID, userID in session, and time will be inserted to the wishlist database.
+We downloaded the movie data from the above link, the form of a CSV file with 5k data.
+After getting the movie data, we created a database on CloudSQL and defined the schema for the data we would populate.
+The DDL code are presented in the project.sql file. 
+After defining the schema, the movie data was imported to the database movies table.
+Other data related to the app include user data and their wishlist data.
+When a user register to the application, we will obtain data from the user such as their chosen “username” and “password”,  and our backend will build out custom database tables to account for this. This is present in the app.py file. A unique “userID” will be created for each user based on uuid function to establish a primary key. 
+When user clicks the "Add to wishlist" button, the movieID, userID in session, and time will be inserted to the wishlist database. When a user clicks on delete from wishlist button on the wishlist page, this would delete from the wishlist table.
 
 
 
