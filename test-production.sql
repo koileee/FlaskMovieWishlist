@@ -96,7 +96,7 @@ select movie_title, movies.title_year
         group by title_year) a
 where movies.title_year = a.title_year
 and movies.num_voted_users = a.num_voted_users
-order by a.country
+order by title_year
 limit 5
 ;
 
@@ -148,9 +148,13 @@ and password = '111111';
 
 -- insert a user into the user table if the user
 -- name does not exist
+
+-- test on an existing user
+select count (*) from users;
+
 insert into users
 values ('74ee7bdd-68b4-4532-ad80-5fe89fa5bb3c','test1',111111)
 on duplicate key update user_name = 'test1';
 
-
+select count (*) from users;
 
