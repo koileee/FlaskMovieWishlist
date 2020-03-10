@@ -1,0 +1,88 @@
+-- query 1 output
+1
+
+-- query 2 output
+2
+
+-- query 3 output
+1
+
+-- query 4 output
+| 10 Cloverfield Lane          | Drama|Horror|Mystery|Sci-Fi|Thriller  |
+| 127 Hours                    | Adventure|Biography|Drama|Thriller    |
+| 1408                         | Fantasy|Horror                        |
+| 1776                         | Drama|Family|History|Musical          |
+| 20,000 Leagues Under the Sea | Adventure|Drama|Family|Fantasy|Sci-Fi |
+
+-- query 5 output
+| 10 Cloverfield Lane | Drama|Horror|Mystery|Sci-Fi|Thriller |        7.3 |
+| 127 Hours           | Adventure|Biography|Drama|Thriller   |        7.6 |
+| 13 Hours            | Action|Drama|Thriller|War            |        7.4 |
+| 1776                | Drama|Family|History|Musical         |        7.6 |
+| 20 Dates            | Biography|Comedy|Romance             |        5.3 |
+
+-- query 6 output
+| Foodfight!            | Lawrence Kasanoff   |        1.7 |
+| The Helix... Loaded   | A. Raven Cruz       |        1.9 |
+| United Passions       | Frédéric Auburtin   |        2.0 |
+| Glitter               | Vondie Curtis-Hall  |        2.1 |
+| Subconscious          | Georgia Hilton      |        2.2 |
+
+-- query 7 output
+| The Helix... Loaded   | A. Raven Cruz   |
+| Circle                | Aaron Hann      |
+| Get Low               | Aaron Schneider |
+| Date Movie            | Aaron Seltzer   |
+| The Funeral           | Abel Ferrara    |
+
+-- query 8 output
+| Intolerance: Love's Struggle Throughout the Ages   |       1916 |        8.0 |
+| Over the Hill to the Poorhouse                     |       1920 |        4.8 |
+| The Big Parade                                     |       1925 |        8.3 |
+| Metropolis                                         |       1927 |        8.3 |
+| Pandora's Box                                      |       1929 |        8.0 |
+
+-- query 9 output
+| Intolerance: Love's Struggle Throughout the Ages   |       1916 |
+| Over the Hill to the Poorhouse                     |       1920 |
+| The Big Parade                                     |       1925 |
+| Metropolis                                         |       1927 |
+| Pandora's Box                                      |       1929 |
+
+-- query 10 output
+| Osama                      | Afghanistan |        7.4 |
+| The Secret in Their Eyes   | Argentina   |        8.2 |
+| Knock Off                  | Aruba       |        4.8 |
+| Mad Max: Fury Road         | Australia   |        8.1 |
+| Dying of the Light         | Bahamas     |        4.4 |
+
+-- query 11 output
+| Osama                      | Afghanistan |
+| The Secret in Their Eyes   | Argentina   |
+| Knock Off                  | Aruba       |
+| Mad Max: Fury Road         | Australia   |
+| Dying of the Light         | Bahamas     |
+
+-- query 12 output
+| Afghanistan |
+| Argentina   |
+| Aruba       |
+| Australia   |
+| Bahamas     |
+
+-- query 13 output
+| How to Train Your Dragon   | Adventure|Animation|Family|Fantasy        |
+| Inception                  | Action|Adventure|Sci-Fi|Thriller          |
+| Inside Job                 | Crime|Documentary                         |
+| Shutter Island             | Mystery|Thriller                          |
+| Toy Story 3                | Adventure|Animation|Comedy|Family|Fantasy |
+
+-- query 14 output
+1
+
+-- query 15 output
+6
+
+-- query 16 output
+6
+
