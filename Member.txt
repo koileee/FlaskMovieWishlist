@@ -6,7 +6,10 @@ Jiaxiang Liu
 Jing Zhong
   - completed google SDK set up tutorials
   - completed proxy set up tutorials
-  - completed E/R diagram for our database designed 
+  - completed E/R diagram for our database designed
+  - updated E/R diagram for our databse designed
+  - updated pictures of database schema designed
+  - added design choices for our E/R diagram and database designed
 Yu Li
   - Set up python flask web app and connect the web app to the Cloud SQL instance
   - Displayed the first row from the test table in the app
