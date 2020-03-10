@@ -22,11 +22,12 @@
 
 Milestone 1 Tasks:
   - Wrote the application function for add to wishlist, display wishlist and recommendations. 
-Henry Zhou
   - did some research on which databases to use
   - completed Google SDK set up tutorials
   - wrote out report.pdf for milestone 1
 
 Milestone 2 Tasks: 
   - improved upon the report.pdf by enhancing descriptions of features, adding screenshots
-  - wrote out various milestone 2 requirements for report.pdf such as ER diagram design choices, technologies used, system support, app description, data population plan, and changes made to database during performance tuning
+  - wrote out: various milestone 2 requirements for report.pdf such as ER diagram design choices, technologies used
+  - wrote out: system support, app description, data population plan
+  - wrote out: changes made to database during performance tuning
