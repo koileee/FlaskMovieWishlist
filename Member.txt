@@ -21,6 +21,8 @@
 **Henry Zhou**
 
 Milestone 1 Tasks:
+  - Wrote the application function for add to wishlist, display wishlist and recommendations. 
+Henry Zhou
   - did some research on which databases to use
   - completed Google SDK set up tutorials
   - wrote out report.pdf for milestone 1
