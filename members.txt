@@ -1,25 +1,38 @@
 **Jiaxiang Liu**
+
+Milestone 1 Tasks:
   - set up tables in the Cloud SQL instance
   - load production data into the Cloud SQL instance
   - create tables according to E/R diagram in database
+  
+Milestone 2 Tasks:
   - create SQL file test-production.sql and corresponding output test-production.out
   - add indexes to database relations for better performance
 
 **Jing Zhong**
+
+Milestone 1 Tasks:
   - completed google SDK set up tutorials
   - completed proxy set up tutorials
   - completed E/R diagram for our database designed
+ 
+ Milestone 2 Tasks:
   - updated E/R diagram for our databse designed
   - updated pictures of database schema designed
   - added design choices for our E/R diagram and database designed
 
 **Yu Li**
+
+Milestone 1 Tasks:
   - Set up python flask web app and connect the web app to the Cloud SQL instance
   - Displayed the first row from the test table in the app
   - Deployed the sample app to Google App Engine
   - Created a page to display all the movie data and a filter button on the movie genre
-  - Wrote the application function for user register and login.
-  - Wrote the application function for add to wishlist and recommendations. 
+  
+Milestone 2 Tasks:
+  - Wrote the application function related to user register and login in app.py.
+  - Wrote the application function for add to wishlist and view wishlist.
+  - Wrote the application function for creating 3 recommendations buttons. 
 
 **Henry Zhou**
 
