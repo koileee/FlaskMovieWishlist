@@ -4,6 +4,7 @@
   - create tables according to E/R diagram in database
   - create SQL file test-production.sql and corresponding output test-production.out
   - add indexes to database relations for better performance
+
 **Jing Zhong**
   - completed google SDK set up tutorials
   - completed proxy set up tutorials
@@ -11,6 +12,7 @@
   - updated E/R diagram for our databse designed
   - updated pictures of database schema designed
   - added design choices for our E/R diagram and database designed
+
 **Yu Li**
   - Set up python flask web app and connect the web app to the Cloud SQL instance
   - Displayed the first row from the test table in the app
@@ -18,6 +20,7 @@
   - Created a page to display all the movie data and a filter button on the movie genre
   - Wrote the application function for user register and login.
   - Wrote the application function for add to wishlist and recommendations. 
+
 **Henry Zhou**
 
 Milestone 1 Tasks:
