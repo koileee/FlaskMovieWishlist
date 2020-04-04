@@ -28,6 +28,17 @@
       return false;
     });
 
+    $('button#Delete').bind('click', function() {
+      var len = table.rows('.selected').data().length
+      for (i = 0; i < len; i++){
+        console.log(table.rows('.selected').data()[i])
+        console.log(JSON.stringify(table.rows('.selected').data()[i]))
+        $.post('/delete_wishlist', JSON.stringify(table.rows('.selected').data()[i]));
+      }
+      return false;
+    });
+
+
     $('button#genrePopular').bind('click', function() {
       window.location.href = '/recommendation?type=genrePopular'
       return false;

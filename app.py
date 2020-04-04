@@ -1,6 +1,6 @@
 from flask import Flask, render_template, flash, redirect, url_for, session, logging, request
 from passlib.hash import sha256_crypt
-#from flask_session import Session
+from flask_session import Session
 from wtforms import Form, StringField, TextAreaField, PasswordField, validators
 from functools import wraps
 import sqlalchemy
@@ -94,12 +94,33 @@ def is_user_logged_in(f):
 def index():
     return render_template('land.html')
 
+
+@app.route('/profile', methods=['GET', 'POST'])
+def profile():
+    with db.connect() as conn:
+        counts = conn.execute(
+            "Select count(*) from wishlist where uid = %s;",(session['uid'])
+        ).fetchall()
+        count = counts[0][0]
+    if request.method == 'POST':
+        print("hi")
+        un = request.form.get('un')
+        print(un)
+        session['username'] = un
+        with db.connect() as conn:
+            conn.execute(
+                "Update users set user_name = %s where uid = %s;",(un, session['uid']))
+        #return redirect(url_for('profile'), user = session['username'] , count= count)
+        return render_template('profile.html', user = session['username'] , count= count)
+    return render_template('profile.html', user = session['username'] , count= count)
+
 @app.route('/register', methods=['GET','POST'])
 def register():
     form = RegisterForm(request.form)
     if request.method == 'POST' and form.validate():
         username = form.username.data
-        uid = str(uuid.uuid4())
+        #uid = str(uuid.uuid4())
+        uid = str(uuid.uuid3(uuid.NAMESPACE_DNS, username))
         password = sha256_crypt.encrypt(str(form.password.data))
         # Create cursor
         with db.connect() as conn:
@@ -288,8 +309,17 @@ def recommendation():
     return render_template('recommendation.html', outdata=data, header = header)
 
 
-
-
+@app.route('/delete_wishlist',methods=['POST'])
+def delete_wishlist():
+    content=request.get_json(force=True)
+    uid = session['uid']
+    mid = content[6]
+    date = datetime.today().strftime('%Y-%m-%d')
+    with db.connect() as conn:
+        firstStep = conn.execute(
+            "delete from wishlist where uid = %s and mid = %s;",(uid, mid)
+        ).fetchall()
+    return redirect(url_for('wishlist'))
 
 @app.route('/process_wishlist',methods=['POST'])
 def process_wishlist():

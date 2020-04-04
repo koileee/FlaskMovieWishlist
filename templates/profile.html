@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <div class="jumbotron text-center">
+        <h1>User Profile</h1>
+        <div class="container">
+          <table class="table table-hover" style="width:50%;margin-left:auto;margin-right:auto;">
+            <tbody>
+              <tr>
+                <th>Current Username</th>
+                <td>{{ user }}</td>
+              </tr>
+              <tr>
+                <th>Movies in wishlist</th>
+                <td>{{ count }}</td>
+              </tr>
+              </tbody>
+          </table>
+          <br>
+
+          <h3 class="text-center"> Change Username </h3>
+          <form method="POST" action="{{ url_for('profile') }}">
+          <div class="form-group" style="width:50%;margin-left:auto;margin-right:auto;"">
+            <label for="un">New Username</label>
+            <input type="text" name="un" class="form-control" value={{request.form.keyword}}>
+          </div>
+          <button type="submit" class="btn btn-primary">Change Username</button>
+          </form>
+
+        </div>
+    </div>
+
+{% endblock %}
