@@ -103,11 +103,15 @@ def profile():
         ).fetchall()
         count = counts[0][0]
     if request.method == 'POST':
-        print("hi")
         un = request.form.get('un')
-        print(un)
-        session['username'] = un
         with db.connect() as conn:
+            result = conn.execute(
+                """Select * from users where user_name = %s limit 1""",(un)
+            ).fetchall()
+            if len(result) > 0:
+                flash('User name already exists')
+                return render_template('profile.html', user = session['username'] , count= count)
+            session['username'] = un
             conn.execute(
                 "Update users set user_name = %s where uid = %s;",(un, session['uid']))
         #return redirect(url_for('profile'), user = session['username'] , count= count)
@@ -305,20 +309,33 @@ def recommendation():
                 and movies.num_voted_users = a.num_voted_users
                 ;"""
             ).fetchall()
+    elif type == 'countryScore':
+        header = ["Title", "Country", "Score"]
+        with db.connect() as conn:
+            data = conn.execute(
+                """select movie_title, movies.country, movies.imdb_score
+                        from test.movies as movies,
+                        (select country, max(imdb_score) as imdb_score
+                        from test.movies
+                        group by country) a
+                where movies.country = a.country
+                and movies.imdb_score = a.imdb_score
+                order by a.country
+                ;"""
+            )
 
     return render_template('recommendation.html', outdata=data, header = header)
 
 
-@app.route('/delete_wishlist',methods=['POST'])
+@app.route('/delete_wishlist',methods=['POST','GET'])
 def delete_wishlist():
     content=request.get_json(force=True)
     uid = session['uid']
     mid = content[6]
     date = datetime.today().strftime('%Y-%m-%d')
     with db.connect() as conn:
-        firstStep = conn.execute(
-            "delete from wishlist where uid = %s and mid = %s;",(uid, mid)
-        ).fetchall()
+        l = conn.execute(
+            "delete from wishlist where uid = %s and mid = %s;",(uid, mid))
     return redirect(url_for('wishlist'))
 
 @app.route('/process_wishlist',methods=['POST'])

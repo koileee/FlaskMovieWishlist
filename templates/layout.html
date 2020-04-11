@@ -33,7 +33,11 @@
       for (i = 0; i < len; i++){
         console.log(table.rows('.selected').data()[i])
         console.log(JSON.stringify(table.rows('.selected').data()[i]))
-        $.post('/delete_wishlist', JSON.stringify(table.rows('.selected').data()[i]));
+        $.post('/delete_wishlist', JSON.stringify(table.rows('.selected').data()[i]),
+                function(json) {
+                  if (json.error){return}
+                  $(document).ajaxStop(function() {location.reload(true)})
+                });
       }
       return false;
     });
@@ -53,6 +57,12 @@
       window.location.href = '/recommendation?type=directorPopular'
       return false;
     });
+
+    $('button#countryScore').bind('click', function() {
+      window.location.href = '/recommendation?type=countryScore'
+      return false;
+    });
+
 
 } );
 
