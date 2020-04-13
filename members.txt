@@ -47,3 +47,7 @@ Milestone 2 Tasks:
   - wrote out: various milestone 2 requirements for report.pdf such as ER diagram design choices, technologies used
   - wrote out: system support, app description, data population plan
   - wrote out: changes made to database during performance tuning
+
+Final Project Tasks:
+  - Finished documenting the changes to report.pdf
+  - Wrote our application overview introduction and practiced with our team for the presentation
