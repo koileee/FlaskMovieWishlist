@@ -8,6 +8,9 @@ Milestone 1 Tasks:
 Milestone 2 Tasks:
   - create SQL file test-production.sql and corresponding output test-production.out
   - add indexes to database relations for better performance
+  
+Final Project Tasks
+  - wrote application SQL overview and practiced the presentation with our team.
 
 **Jing Zhong**
 
