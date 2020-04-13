@@ -21,6 +21,9 @@ Milestone 1 Tasks:
   - updated pictures of database schema designed
   - added design choices for our E/R diagram and database designed
 
+ Final Project Tasks
+  - wrote summary and practiced with our team for the presentation.
+
 **Yu Li**
 
 Milestone 1 Tasks:
