@@ -34,6 +34,11 @@ Milestone 2 Tasks:
   - Wrote the application function for add to wishlist and view wishlist.
   - Wrote the application function for creating 3 recommendations buttons. 
 
+Final Project Tasks:
+- Added one more recommendation button
+- Fixed issue with deleting from wishlist
+- Practiced project demo with teammates
+
 **Henry Zhou**
 
 Milestone 1 Tasks:
